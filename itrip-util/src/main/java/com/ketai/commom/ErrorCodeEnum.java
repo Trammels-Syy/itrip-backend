@@ -1,8 +1,8 @@
-package com.ketai.common.constants;
+package com.ketai.commom;
 
 /**
  * @Author:长沙科泰梦想学院
- * @Description:
+ * @Description: 配置基础环境
  * @Date:Create In 2021/12/14 23:31
  **/
 public enum ErrorCodeEnum {
