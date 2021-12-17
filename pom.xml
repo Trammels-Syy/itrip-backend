@@ -9,6 +9,7 @@
         <module>itrip-beans</module>
         <module>itrip-dao</module>
         <module>itrip-util</module>
+        <module>itrip-web</module>
     </modules>
     <name>itrip-backend</name>
     <packaging>pom</packaging>
