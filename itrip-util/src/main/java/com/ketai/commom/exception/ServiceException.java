@@ -1,6 +1,7 @@
 package com.ketai.commom.exception;
 
-import com.cskt.common.constants.ErrorCodeEnum;
+
+import com.ketai.commom.ErrorCodeEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

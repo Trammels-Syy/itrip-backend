@@ -2,14 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <name>itrip-backend</name>
+    <packaging>pom</packaging>
+    <description>爱旅行后台管理系统</description>
 
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
 
     <groupId>com.ketai</groupId>
     <artifactId>itrip-backend</artifactId>
@@ -21,9 +18,7 @@
         <module>itrip-web</module>
         <module>itrip-auth</module>
     </modules>
-    <name>itrip-backend</name>
-    <packaging>pom</packaging>
-    <description>爱旅行后台管理系统</description>
+
 
     <properties>
         <java.version>1.8</java.version>
@@ -34,9 +29,15 @@
         <mybatis-plus-boot-starter.version>3.3.2</mybatis-plus-boot-starter.version>
         <springfox-swagger.version>2.9.2</springfox-swagger.version>
         <itrip.version>0.0.1-SNAPSHOT</itrip.version>
+        <mysql.version>8.0.16</mysql.version>
+        <hutool.vserion>5.7.17</hutool.vserion>
     </properties>
 
 
+    <!-- 父模块中管理所有的依赖 不下载相关的依赖  制作依赖的管理包括需要什么依赖和什么版本的依赖
+       子模块中如果需要引入依赖，只需要引入被父类管理的依赖模块即可 不需要指定版本
+    -->
+    <!--依赖管理-->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -45,12 +46,48 @@
                 <version>${itrip.version}</version>
             </dependency> <!--依赖统一管理-->
             <dependency>
+                <groupId>com.ketai</groupId>
+                <artifactId>itrip-util</artifactId>
+                <version>${itrip.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ketai</groupId>
+                <artifactId>itrip-dao</artifactId>
+                <version>${itrip.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
 
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.vserion}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-mail</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>

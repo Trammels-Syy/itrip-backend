@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>itrip-backend</artifactId>=
+        <artifactId>itrip-backend</artifactId>
         <groupId>com.ketai</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -12,11 +12,15 @@
     <artifactId>itrip-dao</artifactId>
 
 
-
     <dependencies>
         <dependency>
             <groupId>com.ketai</groupId>
             <artifactId>itrip-beans</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
     </dependencies>
 </project>
